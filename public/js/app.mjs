@@ -9,13 +9,8 @@ textForm.addEventListener('submit', (e) => {
         text: texto.value
     }
 
-    try{
-        netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
-    } catch(e) {alert("Permission UniversalBrowserRead denied.");
-    }
-
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://cors.io/?https://ex1cloudbackend.us-south.cf.appdomain.cloud/analizar');
+    xhr.open('POST', 'https://ex1cloudbackend.us-south.cf.appdomain.cloud/analizar');
     xhr.setRequestHeader('content-type', 'application/json');
     xhr.onload = function () {
         console.log(xhr.responseText);
@@ -38,6 +33,6 @@ function redirect() {
         y = x / 2;
     }, 100);
 
-    //window.location.replace("/result");
+    window.location.replace("https://ex1cloudbackend.us-south.cf.appdomain.cloud/resultado");
     return false;
   }

@@ -3,6 +3,9 @@
 const express = require('express')
 const app = express()
 
+const PORT = process.env.PORT || 8080
+const HOST = process.env.HOST || "0.0.0.0"
+
 app.use(express.static(__dirname + '/public'))
 app.use(express.json())
 
@@ -10,11 +13,12 @@ app.use(express.json())
 //    res.render('index')
 //})
 
-app.listen(3003, (err) => {
+
+app.listen(PORT, (err) => {
     if (err) {
       throw err
     }
-    console.log('Servidor iniciado en el puerto 3000')
+    console.log('Servidor iniciado en el puerto ' + PORT)
   })
 
 /*app.post('/respuesta', urlencodedParser, (req,res) => {
