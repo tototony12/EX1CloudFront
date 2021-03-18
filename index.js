@@ -1,22 +1,23 @@
 'use strict'
 
 const express = require('express')
-const bodyParser = require('body-parser')
-const { urlencoded } = require('body-parser')
-const api = express()
+const app = express()
 
-api.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
+app.use(express.json())
 
-api.listen(3000, (err) => {
-  if (err) {
-    throw err
-  }
-  console.log('API corriendo')
-})
+//app.get('/', (req, res) => {
+//    res.render('index')
+//})
 
-api.use(bodyParser.urlencoded({ extended: false }))
+app.listen(3003, (err) => {
+    if (err) {
+      throw err
+    }
+    console.log('Servidor iniciado en el puerto 3000')
+  })
 
-api.post('/respuesta', urlencodedParser, (req,res) => {
+/*app.post('/respuesta', urlencodedParser, (req,res) => {
   const body = req.body.Body
   res.render('exito', {data: req.body})
-})
+})*/

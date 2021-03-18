@@ -10,7 +10,7 @@ textForm.addEventListener('submit', (e) => {
     }
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/');
+    xhr.open('POST', 'https://ex1cloudbackend.us-south.cf.appdomain.cloud/analizar');
     xhr.setRequestHeader('content-type', 'application/json');
     xhr.onload = function () {
         console.log(xhr.responseText);
