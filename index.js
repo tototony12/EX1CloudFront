@@ -9,10 +9,6 @@ const HOST = process.env.HOST || "0.0.0.0"
 app.use(express.static(__dirname + '/public'))
 app.use(express.json())
 
-//app.get('/', (req, res) => {
-//    res.render('index')
-//})
-
 
 app.listen(PORT, (err) => {
     if (err) {
@@ -20,8 +16,3 @@ app.listen(PORT, (err) => {
     }
     console.log('Servidor iniciado en el puerto ' + PORT)
   })
-
-/*app.post('/respuesta', urlencodedParser, (req,res) => {
-  const body = req.body.Body
-  res.render('exito', {data: req.body})
-})*/
